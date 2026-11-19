@@ -10,6 +10,8 @@ The following repository contains a collection of SQL projects built to practice
 
 An end-to-end SQL analysis of the remote **Data Engineer** job market using the `data_jobs` star-schema data warehouse.
 
+![Data Warehouse Schema: data_jobs](./images/data_warehouse_erd.png)
+
 - **Key Focus:** Multi-table `INNER JOIN`s, `MEDIAN()` salary analysis, `LN()` demand scaling, and `HAVING` aggregation filtering.
 - **Queries Included:**
   - [`01_Top_demand_skills.sql`](./1_EDA/01_Top_demand_skills.sql)

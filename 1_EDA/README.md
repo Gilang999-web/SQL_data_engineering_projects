@@ -28,33 +28,7 @@ Acting as a job market analyst using the `data_jobs` data warehouse (hosted on *
 
 ### Data Warehouse Schema (`data_jobs`)
 
-```mermaid
-erDiagram
-    company_dim ||--o{ job_postings_fact : "company_id"
-    job_postings_fact ||--o{ skills_job_dim : "job_id"
-    skills_dim ||--o{ skills_job_dim : "skill_id"
-
-    job_postings_fact {
-        int job_id PK
-        int company_id FK
-        varchar job_title_short
-        boolean job_work_from_home
-        double salary_year_avg
-    }
-    company_dim {
-        int company_id PK
-        varchar name
-    }
-    skills_job_dim {
-        int job_id PK,FK
-        int skill_id PK,FK
-    }
-    skills_dim {
-        int skill_id PK
-        varchar skills
-        varchar type
-    }
-```
+![Data Warehouse Schema: data_jobs](../images/data_warehouse_erd.png)
 
 - **`job_postings_fact` (Fact Table):** Stores individual job postings, role categories, remote-work flags, and annual salary averages.
 - **`skills_job_dim` (Bridge Table):** Resolves the many-to-many relationship between job postings and required skills using a composite primary key (`job_id`, `skill_id`).
